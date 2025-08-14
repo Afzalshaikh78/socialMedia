@@ -45,5 +45,4 @@ userSchema.methods.comparePassword = async function (password) {
 userSchema.index({ username: "text" });
 
 const User = mongoose.model("User", userSchema);
-
 module.exports = User;
