@@ -57,3 +57,5 @@
 {"level":"warn","message":"User already exists","services":"identity-service","timestamp":"2025-08-16T10:22:31.387Z"}
 {"level":"info","message":"identity services are running on port 3001","services":"identity-service","timestamp":"2025-08-16T10:55:16.857Z"}
 {"level":"info","message":"Connected to mongodb","services":"identity-service","timestamp":"2025-08-16T10:55:18.229Z"}
+{"level":"info","message":"identity services are running on port 3001","services":"identity-service","timestamp":"2025-08-16T11:38:04.086Z"}
+{"level":"info","message":"Connected to mongodb","services":"identity-service","timestamp":"2025-08-16T11:38:05.499Z"}
