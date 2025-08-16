@@ -1,12 +1,12 @@
-require('dotenv').config();
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const Redis = require("ioredis");
 const helmet = require("helmet");
 const { rateLimit } = require("express-rate-limit");
 const { RedisStore } = require("rate-limit-redis");
-const logger = require('../utils/logger')
-const errorHandler = require('../middleware/errorHandler');
+const logger = require("../utils/logger");
+const errorHandler = require("../middleware/errorHandler");
 const proxy = require("express-http-proxy");
 
 const app = express();
@@ -72,7 +72,6 @@ app.use(
     },
   })
 );
-
 
 app.use(errorHandler);
 
