@@ -126,8 +126,7 @@ const refreshTokenUser = async (req, res) => {
       });
     }
 
-
-    const user = await User.findById(storedToken.user)
+    const user = await User.findById(storedToken.user);
     if (!user) {
       logger.warn("User not found ");
 
@@ -137,17 +136,15 @@ const refreshTokenUser = async (req, res) => {
       });
     }
 
-    const { accessToken: newAccessToken, refreshToken: newRefreshToken } = await generateTokens(user)
-    
-    await RefreshToken.deleteOne({ _id: storedToken._id })
-    
+    const { accessToken: newAccessToken, refreshToken: newRefreshToken } =
+      await generateTokens(user);
+
+    await RefreshToken.deleteOne({ _id: storedToken._id });
+
     res.json({
       accessToken: newAccessToken,
       refreshToken: newRefreshToken,
-      
-    })
-
-    
+    });
   } catch (e) {
     logger.error("refresh error occured", e);
     res.status(500).json({
@@ -157,4 +154,32 @@ const refreshTokenUser = async (req, res) => {
   }
 };
 
-module.exports = { registerUser, loginUser };
+//logout
+const logoutUser = async (req, res) => {
+  logger.info("Logout endpoint");
+  try {
+    const { refreshToken } = req.body;
+    if (!refreshToken) {
+      logger.warn("Refresh token missing");
+      return res.status(400).json({
+        success: false,
+        message: "refresh token missing",
+      });
+    }
+    await RefreshToken.deleteOne({ token: refreshToken });
+    logger.info("Refresh token deleted successfully ");
+
+    res.json({
+      success: true,
+      message: "Logged out successfully",
+    });
+  } catch (e) {
+    logger.error("logout error occured", e);
+    res.status(500).json({
+      success: false,
+      message: "logout error occured",
+    });
+  }
+};
+
+module.exports = { registerUser, loginUser, refreshTokenUser,logoutUser };
