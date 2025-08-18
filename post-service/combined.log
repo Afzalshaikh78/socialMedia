@@ -1,0 +1,9 @@
+{"level":"info","message":"post services are running on port 3002","services":"post-service","timestamp":"2025-08-17T12:55:49.806Z"}
+{"level":"info","message":"Connected to mongodb","services":"post-service","timestamp":"2025-08-17T12:55:50.453Z"}
+{"level":"info","message":"post services are running on port 3002","services":"post-service","timestamp":"2025-08-17T14:06:19.851Z"}
+{"level":"info","message":"Connected to mongodb","services":"post-service","timestamp":"2025-08-17T14:06:21.065Z"}
+{"level":"info","message":"post services are running on port 3002","services":"post-service","timestamp":"2025-08-17T14:11:14.863Z"}
+{"level":"info","message":"Connected to mongodb","services":"post-service","timestamp":"2025-08-17T14:11:16.175Z"}
+{"level":"info","message":"Received POST request to /api/posts/create-post","services":"post-service","timestamp":"2025-08-17T16:44:51.781Z"}
+{"level":"info","message":"Request body, [object Object]","services":"post-service","timestamp":"2025-08-17T16:44:51.782Z"}
+{"level":"info","message":"create post endpoint","services":"post-service","timestamp":"2025-08-17T16:44:51.783Z"}
