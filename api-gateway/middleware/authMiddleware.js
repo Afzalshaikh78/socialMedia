@@ -17,15 +17,15 @@ const validateToken = (req, res, next) => {
     });
   }
 
-  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-    if (err) {
-      logger.warn("JWT verification failed", { error: err.message });
-      console.log("JWT verification error:", err.message); // 🔎 Debug
-      return res.status(401).json({
-        message: "Invalid or expired token",
-        success: false,
-      });
-    }
+  // jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+  //   if (err) {
+  //     logger.warn("JWT verification failed", { error: err.message });
+  //     console.log("JWT verification error:", err.message); // 🔎 Debug
+  //     return res.status(401).json({
+  //       message: "Invalid or expired token",
+  //       success: false,
+  //     });
+  //   }
 
     req.user = user;
     next();
