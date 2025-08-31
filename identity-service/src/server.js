@@ -86,11 +86,11 @@ app.use("/api/auth", routes);
 
 //error handler
 
-app.use(errorHandler);
+// app.use(errorHandler);
 
-app.listen(PORT, () => {
-  logger.info(`identity services are running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   logger.info(`identity services are running on port ${PORT}`);
+// });
 
 process.on("unhandledRejection", (reason, promise) => {
   logger.error("Unhandled rejection at", promise, "reason: ", reason);
